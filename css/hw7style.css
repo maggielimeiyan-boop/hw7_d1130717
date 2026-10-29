@@ -1,0 +1,293 @@
+/* 1. 復古色系變數定義 */
+    :root {
+        --brick-red: #8b3a2b;       
+        --retro-green: #2c402e;     
+        --amber-gold: #c88d38;      
+        --paper-bg: #f4efe6;        
+        --card-paper: #fdfbf7;      
+        --border-dark: #8c7b6b;     
+        --border-light: #e0d6c8;    
+        --text-main: #332b27;       
+        --text-muted: #6e6258;      
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* [調整重點 1] 將整體最大寬度加寬（例如從 980px 擴展至 1160px），讓邊框與橫向空間變寬 */
+    body {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 32px 24px;
+        font-family: "Microsoft JhengHei", "PMingLiU", "PingFang TC", serif;
+        font-size: 17px;
+        line-height: 1.85;
+        color: var(--text-main);
+        background-color: var(--paper-bg);
+    }
+
+    /* 2. 頁首 Header 與寬邊框設定 */
+    header {
+        padding: 36px 40px;
+        background-color: var(--retro-green);
+        color: #f7f3eb;
+        border: 4px double var(--amber-gold); 
+        border-top: 8px solid var(--brick-red);  
+        border-radius: 4px;
+        box-shadow: 0 4px 10px rgba(44, 64, 46, 0.15);
+    }
+
+    /* [調整重點 2] 讓 h1 保持同一行、不自動換行 */
+    h1 {
+        margin: 0 0 16px;
+        font-size: 1.9rem; /* 微調字級使其能順利放入寬邊框內 */
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+        color: #ffffff;
+        white-space: nowrap; /* 強制不換行，變成同一行 */
+        overflow: hidden;    /* 防止若螢幕過小超出邊界時破版 */
+        text-overflow: ellipsis; /* 若螢幕小於文字長度時顯示省略號 */
+        border-bottom: 1px dashed var(--amber-gold);
+        padding-bottom: 12px;
+    }
+
+    header p {
+        margin: 10px 0;
+    }
+
+    small {
+        font-size: 0.85em;
+    }
+
+    /* 3. 目錄導覽 Nav */
+    nav {
+        margin: 24px 0;
+        padding: 20px 24px;
+        background-color: #eae1d3;
+        border: 2px solid var(--border-dark);
+        border-radius: 4px;
+    }
+
+    nav h2 {
+        margin-top: 0;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--brick-red);
+        font-size: 1.2rem;
+        color: var(--brick-red);
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin: 6px 6px 6px 0;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 5px 12px;
+        background-color: var(--card-paper);
+        border: 1px solid var(--border-dark);
+        border-radius: 2px;
+        color: var(--retro-green);
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    a {
+        color: var(--brick-red);
+        text-underline-offset: 4px;
+        overflow-wrap: anywhere;
+    }
+
+    a:hover, nav a:hover {
+        color: #ffffff;
+        background-color: var(--brick-red);
+        border-color: var(--brick-red);
+        text-decoration: none;
+    }
+
+    a:focus-visible, summary:focus-visible {
+        outline: 3px solid var(--amber-gold);
+        outline-offset: 4px;
+    }
+
+    /* 4. 文章章節卡片 */
+    section, aside {
+        margin: 24px 0;
+        padding: 28px;
+        background-color: var(--card-paper);
+        border: 1px solid var(--border-dark);
+        border-radius: 4px;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+    }
+
+    h2 {
+        margin: 0 0 18px;
+        padding-left: 14px;
+        border-left: 6px solid var(--brick-red);
+        color: var(--brick-red);
+        font-size: 1.45rem;
+        line-height: 1.5;
+    }
+
+    h3 {
+        margin: 22px 0 10px;
+        font-size: 1.15rem;
+        color: var(--retro-green);
+    }
+
+    p {
+        margin: 12px 0;
+    }
+
+    ul, ol {
+        padding-left: 1.6em;
+    }
+
+    li {
+        margin: 8px 0;
+    }
+
+    hr {
+        margin: 30px 0;
+        border: 0;
+        border-top: 1px dashed var(--border-dark);
+    }
+
+    /* 5. 表格與置中設定 */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95em;
+        overflow-wrap: anywhere;
+        margin-top: 12px;
+        border: 2px solid var(--border-dark);
+    }
+
+    caption {
+        margin-bottom: 12px;
+        text-align: left;
+        font-weight: bold;
+        color: var(--brick-red);
+    }
+
+    th, td {
+        padding: 12px;
+        border: 1px solid var(--border-dark);
+        text-align: center; /* 表格欄位內容置中 */
+        vertical-align: middle;
+    }
+
+    thead {
+        background-color: #e3d7c5;
+        color: var(--text-main);
+    }
+
+    tbody th {
+        background-color: #ede2d3;
+        color: var(--brick-red);
+    }
+
+    /* 6. 圖片與媒體邊框 */
+    figure {
+        margin: 20px 0;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border: 4px solid #ffffff;
+        outline: 1px solid var(--border-dark);
+        border-radius: 2px;
+    }
+
+    figcaption {
+        margin-top: 10px;
+        color: var(--text-muted);
+        font-size: 0.88em;
+    }
+
+    iframe {
+        display: block;
+        max-width: 100%;
+        border: 2px solid var(--border-dark);
+        border-radius: 2px;
+    }
+
+    .video-frame {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .map-frame {
+        width: 100%;
+        height: 340px;
+    }
+
+    /* 7. 參觀小貼士 */
+    #tips {
+        background-color: #f7f0e1;
+        border: 2px dashed var(--amber-gold);
+        border-left: 8px solid var(--amber-gold);
+    }
+
+    #tips h2 {
+        border-left: none;
+        padding-left: 0;
+        color: var(--amber-gold);
+    }
+
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: var(--brick-red);
+    }
+
+    /* 8. 頁尾 Footer */
+    footer {
+        margin-top: 36px;
+        padding: 24px 0;
+        border-top: 3px double var(--border-dark);
+        color: var(--text-muted);
+        text-align: center;
+    }
+
+    /* 9. 響應式微調 */
+    @media (max-width: 768px) {
+        body {
+            padding: 16px 12px;
+            font-size: 16px;
+        }
+
+        header, nav, section, aside {
+            padding: 20px 16px;
+        }
+
+        /* 手機螢幕較窄時，若無法容納同一行則自動恢復換行，避免文字被切斷 */
+        h1 {
+            white-space: normal;
+            font-size: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+        }
+
+        th, td {
+            padding: 8px;
+        }
+    }
+    .reading-focus {
+        background-color: #f6df9d;
+        color: #3e351c;
+        padding: 2px 6px;
+    }
